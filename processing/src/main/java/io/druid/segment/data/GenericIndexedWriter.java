@@ -176,6 +176,10 @@ public class GenericIndexedWriter<T> implements Serializer
     return StringUtils.format("%s_header", fileNameBase);
   }
 
+  public void close() throws IOException {
+    this.segmentWriteOutMedium.close();
+  }
+
   private static void writeBytesIntoSmooshedChannel(
       long numBytesToPutInFile,
       final byte[] buffer,

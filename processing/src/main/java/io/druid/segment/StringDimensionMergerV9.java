@@ -177,6 +177,7 @@ public class StringDimensionMergerV9 implements DimensionMergerV9<int[]>
         System.currentTimeMillis() - dimStartTime
     );
 
+    dictionaryWriter.close();
     setupEncodedValueWriter();
   }
 
